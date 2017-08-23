@@ -3,6 +3,7 @@ package com.example.blackdandan.datastructure;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.example.blackdandan.algorithm.Sorter;
 import com.example.blackdandan.datastructure.somedatastructure.bitree.MyBiTree;
 import com.example.blackdandan.datastructure.somedatastructure.queue.MyQueue;
 import com.example.blackdandan.datastructure.somedatastructure.stack.MyStack;
@@ -60,47 +61,53 @@ public class MainActivity extends Activity {
 //            System.out.println("do===="+queue.deQueue()+"排队结束");
 //
 //        }
-        MyBiTree<String> myBiTree =new MyBiTree<>("-");
-        MyBiTree<String> leftFormula =new MyBiTree<>("+");
-        MyBiTree<String> rightFormula = new MyBiTree<>("/");
-        leftFormula.insertLeftTree(new MyBiTree<>("a"));
-
-        MyBiTree<String> multiplyFormula = new MyBiTree<>("*");
-        multiplyFormula.insertLeftTree(new MyBiTree<String>("b"));
-
-        MyBiTree<String> decrementFormula = new MyBiTree<>("-");
-        decrementFormula.insertLeftTree(new MyBiTree<String>("c"));
-        decrementFormula.insertRightTree(new MyBiTree<String>("d"));
-
-        multiplyFormula.insertRightTree(decrementFormula);
-
-        leftFormula.insertRightTree(multiplyFormula);
-        rightFormula.insertLeftTree(new MyBiTree<>("e"));
-        rightFormula.insertRightTree(new MyBiTree<>("f"));
-        myBiTree.insertLeftTree(leftFormula);
-        myBiTree.insertRightTree(rightFormula);
-        final StringBuilder stringBuilder = new StringBuilder();
-        MyBiTree.VisitCallBack callBack = new MyBiTree.VisitCallBack() {
-            @Override
-            public void visit(MyBiTree myBiTree) {
-                stringBuilder.append(myBiTree.getData());
-            }
-        };
-        System.out.println("==============preOrder======");
-        myBiTree.preOrderTraverse(callBack);
-        System.out.println("=============="+stringBuilder.toString());
-        stringBuilder.delete(0,stringBuilder.length());
-        System.out.println("==============preOrder======");
-        System.out.println("==============postOrderTraverse======");
-        myBiTree.postOrderTraverse(callBack);
-        System.out.println("=============="+stringBuilder.toString());
-        stringBuilder.delete(0,stringBuilder.length());
-        System.out.println("==============postOrderTraverse======");
-        System.out.println("==============afterOrderTraverse======");
-        myBiTree.afterOrderTraverse(callBack);
-        System.out.println("=============="+stringBuilder.toString());
-        stringBuilder.delete(0,stringBuilder.length());
-        System.out.println("==============afterOrderTraverse======");
+//        MyBiTree<String> myBiTree =new MyBiTree<>("-");
+//        MyBiTree<String> leftFormula =new MyBiTree<>("+");
+//        MyBiTree<String> rightFormula = new MyBiTree<>("/");
+//        leftFormula.insertLeftTree(new MyBiTree<>("a"));
+//
+//        MyBiTree<String> multiplyFormula = new MyBiTree<>("*");
+//        multiplyFormula.insertLeftTree(new MyBiTree<String>("b"));
+//
+//        MyBiTree<String> decrementFormula = new MyBiTree<>("-");
+//        decrementFormula.insertLeftTree(new MyBiTree<String>("c"));
+//        decrementFormula.insertRightTree(new MyBiTree<String>("d"));
+//
+//        multiplyFormula.insertRightTree(decrementFormula);
+//
+//        leftFormula.insertRightTree(multiplyFormula);
+//        rightFormula.insertLeftTree(new MyBiTree<>("e"));
+//        rightFormula.insertRightTree(new MyBiTree<>("f"));
+//        myBiTree.insertLeftTree(leftFormula);
+//        myBiTree.insertRightTree(rightFormula);
+//        final StringBuilder stringBuilder = new StringBuilder();
+//        MyBiTree.VisitCallBack callBack = new MyBiTree.VisitCallBack() {
+//            @Override
+//            public void visit(MyBiTree myBiTree) {
+//                stringBuilder.append(myBiTree.getData());
+//            }
+//        };
+//        System.out.println("==============preOrder======");
+//        myBiTree.preOrderTraverse(callBack);
+//        System.out.println("=============="+stringBuilder.toString());
+//        stringBuilder.delete(0,stringBuilder.length());
+//        System.out.println("==============preOrder======");
+//        System.out.println("==============postOrderTraverse======");
+//        myBiTree.postOrderTraverse(callBack);
+//        System.out.println("=============="+stringBuilder.toString());
+//        stringBuilder.delete(0,stringBuilder.length());
+//        System.out.println("==============postOrderTraverse======");
+//        System.out.println("==============afterOrderTraverse======");
+//        myBiTree.afterOrderTraverse(callBack);
+//        System.out.println("=============="+stringBuilder.toString());
+//        stringBuilder.delete(0,stringBuilder.length());
+//        System.out.println("==============afterOrderTraverse======");
+//        System.out.println("==============tree.depth======"+myBiTree.depth());
+//        int[] ints = new int[]{3,2,1,5,4,7,6,9,8,0};
+        int[] ints = new int[]{38,4,2};
+        int[] ints1 = Sorter.StraightInsertionSort2(ints);
+        for (int i = 0;i<ints1.length;i++)
+             System.out.println("do===="+ints1[i]);
 
     }
 }
