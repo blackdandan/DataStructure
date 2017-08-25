@@ -103,9 +103,9 @@ public class MainActivity extends Activity {
 //        stringBuilder.delete(0,stringBuilder.length());
 //        System.out.println("==============afterOrderTraverse======");
 //        System.out.println("==============tree.depth======"+myBiTree.depth());
-//        int[] ints = new int[]{3,2,1,5,4,7,6,9,8,0};
-        int[] ints = new int[]{38,4,2};
-        int[] ints1 = Sorter.StraightInsertionSort2(ints);
+        int[] ints = new int[]{3,2,1,5,4,7,6,9,8,0};
+//        int[] ints = new int[]{38,4,2};
+        int[] ints1 = Sorter.bubbleSort(ints);
         for (int i = 0;i<ints1.length;i++)
              System.out.println("do===="+ints1[i]);
 

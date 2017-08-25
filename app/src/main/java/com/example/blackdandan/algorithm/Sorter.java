@@ -63,4 +63,24 @@ public class Sorter {
         }
         return ints;
     }
+
+    /**
+     * 简单的冒泡排序,
+     * 概念就是,相邻的两个比较,把大的,或者小的放在后面,使得最后一个是最大的
+     * 下一趟使得倒数第一个是最大的
+     * 以此类推
+     * @param ints
+     * @return
+     */
+    public static int[] bubbleSort(int[] ints){
+        for (int i = 1; i < ints.length; i++){
+            for (int j = 1; j <= ints.length -i; j++)
+            if(ints[j] < ints[j-1] ){
+                int temp = ints[j];
+                ints[j] = ints[j-1];
+                ints[j-1] = temp;
+            }
+        }
+        return ints;
+    }
 }
